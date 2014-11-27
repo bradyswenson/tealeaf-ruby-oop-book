@@ -9,6 +9,10 @@ class MyCar
 		self.model = m
 	end
 
+	def self.milage(gallons, miles)
+		puts "#{miles / gallons} mpg"
+	end
+
 	def speed_up(n)
 		self.speed += n
 		puts "You sped up #{n} mph"
@@ -32,6 +36,10 @@ class MyCar
 		self.color = c
 	end
 
+	def to_s
+		puts "This car is a #{self.year} #{self.color} #{self.model} going #{self.speed}mph."
+	end
+
 end
 
 jeep = MyCar.new("1997", "Blue", "Jeep")
@@ -45,3 +53,8 @@ jeep.stop
 jeep.current_speed
 jeep.spray_paint("Red")
 puts jeep.color
+
+MyCar.milage(15,250)
+
+jeep.to_s
+
